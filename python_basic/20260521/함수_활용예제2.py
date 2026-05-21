@@ -16,13 +16,13 @@ print("=" * 80)
 
 # 문제2)
 def WordCountFunc(arg):
-    result_dict = {}
+    list_dict = {}
     for i in arg:
-        if i not in result_dict:
-            result_dict[i] = 1
+        if i not in list_dict:
+            list_dict[i] = 1
         else:
-            result_dict[i] += 1
-    return result_dict
+            list_dict[i] += 1
+    return list_dict
 
 
 listdata = ['python', 'ai', 'study', 'good', 'ai', 'python', 'ai']
@@ -34,11 +34,20 @@ print("=" * 80)
 
 # 문제3)
 def InformCombine(key_list, value_list):
-    result_dict = {}
-    for idx, key in enumerate(key_list):
-        if key not in result_dict:
-            result_dict[key] = value_list[idx]
-    return result_dict
+    data_dict = {item : value_list[idx] for idx, item in enumerate(key_list)}
+    return data_dict
+
+    # data_dict = {}
+    # for key, value in zip(key_list, value_list):
+    #     if key not in data_dict:
+    #         data_dict[key] = value
+    # return data_dict
+
+
+    # for idx, item in enumerate(key_list):
+    #     if item not in data_dict:
+    #         data_dict[item] = value_list[idx]
+    # return data_dict
 
 
 key_list = ["name", "age", "address"]
