@@ -55,3 +55,6 @@ value_list = ["Hong", 50, "seoul"]
 
 result = InformCombine(key_list, value_list)
 print('result : ', result)  # {'name':"Hong", "age:50, "address":"seoul"}
+
+import os
+os.system("pause")

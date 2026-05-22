@@ -16,4 +16,4 @@ count = 0
 for s in log_list:
     if s == 'R':
         count += 1
-print(count)
+print('R의 개수 : ', count)
