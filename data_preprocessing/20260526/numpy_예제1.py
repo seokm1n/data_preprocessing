@@ -12,3 +12,6 @@ print(subset)
 
 subset = arr2[:3, :3]  # arr2[행슬라이싱, 열슬라이싱]
 print(subset)
+
+arr_zero = np.ones((13, 13))  # 배열 내용을 0으로 채워서 배열 생성
+print(arr_zero)
