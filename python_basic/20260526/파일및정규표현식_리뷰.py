@@ -14,4 +14,4 @@ import re
 strdata = "AI 프로그래밍 1998 python Preprocessing!!"
 print(re.findall(r'[가-힣]+', strdata))  # 한글
 print(re.findall(r'[0-9]+', strdata))  # 숫자
-print(re.findall(r'[a-zA-Z]+', strdata))  #영어 대소문자
+print(re.findall(r'[a-zA-Z]+', strdata))  # 영어 대소문자
