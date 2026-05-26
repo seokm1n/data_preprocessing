@@ -1,13 +1,11 @@
 class PersonInfo():
     def __init__(self, name, age, city):
-        self.name = name
+        self.name = name  # 멤버변수화 ==> 멤버변수 등록과 동시 초기화
         self.age = age
         self.city = city
 
     def Display(self):
-        print("이름 : ", self.name, ", ", end='')
-        print("나이 : ", self.age, ", ", end='')
-        print("지역 : ", self.city)
+        print(f'이름 : {self.name}, 나이 : {self.age}, 지역 : {self.city}')
 
 
 per1 = PersonInfo("Hong", 30, "Seoul")
