@@ -2,7 +2,20 @@ from json.decoder import NaN
 
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import platform
+from matplotlib import font_manager, rc
 
+plt.rcParams['axes.unicode_minus'] = False
+
+if platform.system() == 'Darwin':
+	rc('font', family='AppleGothic')
+elif platform.system() == 'Windows':
+	path = "C:/Windows/Fonts/malgun.ttf"
+	font_name = font_manager.FontProperties(fname=path).get_name()
+	rc('font',family=font_name)
+else:
+	print("Unknon system...")
 popdf = pd.read_excel("population_in_seoul.xls")  # 엑셀파일 읽어서 DataFrame 객체로 생성
 # 특정 파일을 읽어서 DataFrame 객체로 생성했을 경우 항상 DataFrame 객체의 정보를 확인 필요 ==> info()
 popdf.info()  # NaN 데이터 포함하고 있음
@@ -41,3 +54,17 @@ popdf.reset_index(drop=True, inplace=True)
 # drop=False(default) ==> 기존 인덱스 컬럼열로 올리고 인덱스 초기화
 # drop=True ==> 컬럼열로 올리지 말고 기존 인덱스 삭제
 print(popdf)
+print("=" * 80)
+
+# 특정 컬럼 데이터를 인덱스로 설정해서 사용!! ==> set_index()
+popdf.set_index(["자치구"], inplace=True)
+print(popdf)
+print("=" * 80)
+
+# 남자 컬럼 기준 인구수 20만 이상인 데이터만 추출해서 막대 그래프로 시각화
+subset = popdf.loc[popdf["남자"]>=200000]
+print(subset)
+
+subset.plot.bar()
+plt.axhline(y=200000, color='r', linestyle='--')
+plt.show()
