@@ -26,30 +26,8 @@ print(mydf)
 print(mydf['Kor'])  # Series 출력시 Name, dtype 도 나옴
 # DataFrame 객체의 한 컬럼열을 선택하면 해당 객체는 1차원 형태인 Series 객체가 됨
 print(type(mydf['Kor']))  # Series 클래스의 1차원 객체
-
-print("=" * 80)
 print(mydf)
 # 컬럼 인덱스 수정
 # mydf.colums[0] = "국어" ==> 오류
 mydf.columns = ["국어", "영어"]  # 컬럼인덱스를 수정하는 문법
 print(mydf)
-print("=" * 80)
-
-# 2. 리스트를 활용해서 DataFrame 객체를 생성
-mydf = mydf = pd.DataFrame([[60, 70, 80], [90, 50, 85], [66, 77, 88]],
-                           columns=["국어", "영어", "수학"], index=['a', 'b', 'c'])
-print(mydf)
-# 컬럼은 ==> 국어, 영어, 수학
-# 행 ==> a, b, c
-print("=" * 80)
-
-# 3. 넘파이 배열을 활용한 DataFrame 생성
-mydf = pd.DataFrame(np.arange(10, 25).reshape(5, 3),
-                    columns=['one', 'two', 'three'], index=['a', 'b', 'c', 'd', 'e'])
-print(mydf)
-print("=" * 80)
-# DataFrame 객체 내용 선택(접근) 문법
-# 라벨인덱스로 접근 ==> 라벨 인덱서 ==> loc (label location)
-# 수치인덱스로 접근 ==> 수치 인덱서 ==> iloc (integer label location)
-print(mydf.iloc[2, 1])
-print(mydf.loc['c', 'two'])
