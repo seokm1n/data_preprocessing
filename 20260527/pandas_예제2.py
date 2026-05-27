@@ -1,14 +1,6 @@
 import numpy as np
 import pandas as pd
 
-# 2. 리스트를 활용해서 DataFrame 객체를 생성
-mydf = mydf = pd.DataFrame([[60, 70, 80], [90, 50, 85], [66, 77, 88]],
-                           columns=["국어", "영어", "수학"], index=['a', 'b', 'c'])
-print(mydf)
-# 컬럼은 ==> 국어, 영어, 수학
-# 행 ==> a, b, c
-print("=" * 80)
-
 # 3. 넘파이 배열을 활용한 DataFrame 생성
 mydf = pd.DataFrame(np.arange(10, 25).reshape(5, 3),
                     columns=['one', 'two', 'three'])  # , index=['a', 'b', 'c', 'd', 'e'])

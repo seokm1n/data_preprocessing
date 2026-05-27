@@ -31,3 +31,11 @@ print(mydf)
 # mydf.colums[0] = "국어" ==> 오류
 mydf.columns = ["국어", "영어"]  # 컬럼인덱스를 수정하는 문법
 print(mydf)
+
+# 2. 리스트를 활용해서 DataFrame 객체를 생성
+mydf = mydf = pd.DataFrame([[60, 70, 80], [90, 50, 85], [66, 77, 88]],
+                           columns=["국어", "영어", "수학"], index=['a', 'b', 'c'])
+print(mydf)
+# 컬럼은 ==> 국어, 영어, 수학
+# 행 ==> a, b, c
+print("=" * 80)
