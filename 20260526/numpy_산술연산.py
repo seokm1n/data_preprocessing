@@ -12,6 +12,6 @@ print(arr3 + 3)
 
 arr4 = np.linspace(1, 10, 5)
 # 메모리에 차트를 랜더링
-arr5 = np.array([1,3,6,10,15])
+arr5 = np.array([1, 3, 6, 10, 15])
 plt.plot(arr5)
-plt.show()  # 메모리에 랜더링된 차트를 화면에 출력
+plt.show()  # 메모리에 랜더링된 차트를 화면에 출력해줘
