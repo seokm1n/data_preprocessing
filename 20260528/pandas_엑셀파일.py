@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import re
 
 # 출력 옵션 제어
 pd.set_option('display.max_rows', 1000)
@@ -8,7 +7,7 @@ pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 pd.set_option('max_colwidth', 1000)
 
-youdf = pd.read_excel("youtube_rank_1000.xlsx")  # 엑셀파일 읽어서 DataFrame 객체로 생성
+youdf = pd.read_excel("youtube_data.xlsx")  # 엑셀파일 읽어서 DataFrame 객체로 생성
 # print(youdf)
 # print(youdf.info())
 print(youdf.head(10))
@@ -25,4 +24,4 @@ youdf["ChannelName"] = youdf["ChannelName"].apply(lambda x: x.split(' ')[0])
 print(youdf['ChannelName'])
 
 # 정리가 완료 되면 'youtube_data.xlsx' 파일로 저장
-youdf.to_excel('youtube_data.xlsx', index=False)
+youdf.to_excel('youtube_data.xlsx')  # , index=False)
