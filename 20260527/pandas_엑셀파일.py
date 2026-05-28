@@ -62,7 +62,7 @@ print(popdf)
 print("=" * 80)
 
 # 남자 컬럼 기준 인구수 20만 이상인 데이터만 추출해서 막대 그래프로 시각화
-subset = popdf.loc[popdf["남자"]>=200000]
+subset = popdf.loc[popdf["남자"]>=200000].copy()
 print(subset)
 
 subset.plot.bar()
