@@ -58,6 +58,7 @@ print("=" * 80)
 # print(youdf_top10)
 # # 수정된 DataFrame 막대차트 시각화
 # youdf_top10.plot.bar()
+# plt.tight_layout()
 # plt.show()
 # # plt.savefig("chart1.JPEG")  # 랜더링 된 것 파일로 저장
 

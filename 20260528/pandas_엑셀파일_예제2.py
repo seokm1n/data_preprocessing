@@ -31,4 +31,27 @@ print("=" * 80)
 
 youdf["ChannelName"] = youdf["ChannelName"].apply(lambda x: x.split(' ')[0])
 
-# 데이터
+# 데이터중에 Category 가 가장 많은 것은?
+data = youdf['Category'].value_counts()  # Series
+
+# Series ==> DataFrame 객체로 변환
+datadf = pd.DataFrame(data)
+print(datadf)
+# datadf.index.name = ''
+print("=" * 80)
+print(datadf)
+print("=" * 80)
+# count 컬럼명을 카테고리개수 로 수정
+datadf.rename(columns={'count': '카테고리개수'}, inplace=True)
+print(datadf)
+print("=" * 80)
+datadf_top5 = datadf.head(5).copy()
+print(datadf_top5)
+
+colors = ['#ff9999', '#ffc000', '#8fd9b6', '#d395d0', '#7aa6ff']
+wedgeprops = {'width': 0.7, 'edgecolor': 'w', 'linewidth': 5}
+
+plt.pie(datadf_top5['카테고리개수'], labels=datadf_top5.index, autopct='%.1f%%', startangle=260, counterclock=False,
+        colors=colors,
+        wedgeprops=wedgeprops, hatch=['**O', 'oO', 'O.O', '.||.', '***'])  # 파이차트 랜더링 함수
+plt.show()
