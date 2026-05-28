@@ -51,7 +51,8 @@ print(datadf_top5)
 colors = ['#ff9999', '#ffc000', '#8fd9b6', '#d395d0', '#7aa6ff']
 wedgeprops = {'width': 0.7, 'edgecolor': 'w', 'linewidth': 5}
 
-plt.pie(datadf_top5['카테고리개수'], labels=datadf_top5.index, autopct='%.1f%%', startangle=260, counterclock=False,
+plt.pie(x=datadf_top5['카테고리개수'], labels=datadf_top5.index,
+        autopct='%.1f%%', startangle=260, counterclock=False,
         colors=colors,
         wedgeprops=wedgeprops, hatch=['**O', 'oO', 'O.O', '.||.', '***'])  # 파이차트 랜더링 함수
 plt.show()
